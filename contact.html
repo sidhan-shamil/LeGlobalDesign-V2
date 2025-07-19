@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le Global Design</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- AOS Animation Library -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        clash: ['"Clash Display"', 'sans-serif'],
+                        montserrat: ['"Montserrat"', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@600;700&family=Montserrat:wght@600&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f6f6f6;
+        }
+
+        h2,
+        p {
+            font-family: 'Clash Display', sans-serif;
+        }
+
+        h1 {
+            font-family: 'Clash Display', sans-serif;
+        }
+
+        label {
+            font-family: 'Clash Display', sans-serif;
+
+        }
+
+        .floating-element {
+            animation: float 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+
+<body class="flex flex-col min-h-screen m-0 p-0 overflow-x-hidden">
+    <!-- Header -->
+    <header
+        class="h-[80px] flex items-center justify-between px-6 py-6 md:px-20 bg-white/95 backdrop-blur-sm sticky top-0 z-50">
+        <h3 class="text-[20px] font-semibold uppercase text-[#21242A]">Le Global Design</h3>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 items-center gap-6">
+            <a href="index.html"
+                class="text-[16px] font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">
+                Home
+            </a>
+            <a href="portfolio.html"
+                class="text-[16px] font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">
+                Portfolio
+            </a>
+            <a href="product.html"
+                class="text-[16px] font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">
+                Product
+            </a>
+            <a href="service.html"
+                class="text-[16px] font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">
+                Service
+            </a>
+            <a href="contact.html" class="text-[16px] font-semibold uppercase text-[#21242A] transition-colors">
+                Contact
+            </a>
+        </nav> 
+
+
+        <!-- Hamburger (Mobile) -->
+        <button id="menu-btn" class="lg:hidden focus:outline-none transition-transform hover:scale-105">
+            <svg class="w-6 h-6 text-[#21242A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    </header>
+
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="hidden flex flex-col gap-4 px-6 py-4 bg-white border-t border-gray-200">
+        <a href="index.html"
+            class="text-lg font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">
+            Home
+        </a>
+        <a href="portfolio.html"
+            class="text-lg font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">
+            Portfolio
+        </a>
+        <a href="product.html"
+            class="text-lg font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">
+            Product
+        </a>
+        <a href="service.html"
+            class="text-lg font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">
+            Service
+        </a>
+        <a href="contact.html"
+            class="text-lg font-semibold uppercase text-[#21242A] hover:text-gray-600 transition-colors">
+            Contact
+        </a>
+    </nav>
+
+    <section class="relative bg-white text-[#21242A]">
+        <div class="flex flex-col lg:flex-row w-full relative z-0">
+
+
+            <!-- Left: Contact Info -->
+            <div class="w-full lg:w-3/5 px-6 md:pl-20 md:pr-10 py-10 flex flex-col justify-center">
+                <div class="space-y-6">
+                    <!-- <h1 class="text-6xl font-extrabold text-[#21242A] mb-3">GET IN TOUCH</h1> -->
+                    <h1 data-aos="fade-up" class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-[#21242A] mb-3 floating-element">
+                        GET IN TOUCH
+                    </h1>
+
+
+                    <p data-aos="fade-up" class="text-gray-600 font-medium pb-4">
+                        Contact us today for a free consultation <br />
+                        and find out how we can help you!
+                    </p>
+
+                    <!-- Constrained border block -->
+                    <div data-aos="fade-up" class="border-b border-[#D9D9D9] pb-4 pt-4 max-w-md">
+                        <p class="font-medium text-[#C5A47E]">Phone:
+                            <span class="text-[#21242A]">+974 31301177, +974 66541944</span>
+                        </p>
+                    </div>
+
+                    <div data-aos="fade-up" class="border-b border-[#D9D9D9] pb-4 pt-4 max-w-md">
+                        <p class="font-medium text-[#C5A47E]">Email:
+                            <span class="text-[#21242A]">leglobaldesign.qtr@gmail.com</span>
+                        </p>
+                    </div>
+
+                    <div data-aos="fade-up" class="border-b border-[#D9D9D9] pb-4 pt-4 max-w-md">
+                        <p class="font-medium text-[#C5A47E]">Address:
+                            <span class="text-[#21242A]">
+                                Hyde Park Building, 1st Floor, office #4 <br>
+                                Whole sale Market Road, Abu hamour, Doha, Qatar
+                            </span>
+                        </p>
+                    </div>
+
+                    <div data-aos="fade-up" class="border-b border-[#D9D9D9] pb-4 pt-4 max-w-md">
+                        <p class="font-medium text-[#C5A47E]">Working Hours:
+                            <span class="text-[#21242A]">
+                                8.30am - 5.30pm <br>Friday * closed
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Image -->
+            <div data-aos="fade-left" class="hidden lg:block w-full lg:w-2/5 relative h-full overflow-hidden lg:rounded-l-xl">
+                <img src="assets/images/contact-cover.jpg" alt="Contact Cover" class="w-full h-full object-cover" />
+                <div class="absolute inset-0 bg-black/30 z-10"></div>
+            </div>
+
+            <div
+                class="lg:absolute lg:top-1/2 lg:left-[65%] lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 w-full lg:w-[30%] bg-white p-6 md:p-8 shadow-2xl rounded-lg z-10 mt-10 lg:mt-0">
+
+                <h3 data-aos="fade-left" class="text-2xl font-bold mb-6 text-[#21242A]">Drop Me a Line</h3>
+                <form class="space-y-4 text-sm text-[#21242A]">
+                    <div>
+                        <label for="name" class="block mb-1 text-[#21242A] font-normal">Name
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="name" required
+                            class="w-full bg-[#EFEFEF] border border-[#DDDDDD] px-4 py-2 rounded focus:outline-none focus:border-[#C5A47E]" />
+                    </div>
+
+                    <div>
+                        <label for="email" class="block mb-1 text-[#21242A] font-normal">Email
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <input type="email" id="email" required
+                            class="w-full bg-[#EFEFEF] border border-[#DDDDDD] px-4 py-2 rounded focus:outline-none focus:border-[#C5A47E]" />
+                    </div>
+
+                    <div>
+                        <label for="phone" class="block mb-1 text-[#21242A] font-normal">Phone Number
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <input type="number" id="phone" required
+                            class="w-full bg-[#EFEFEF] border border-[#DDDDDD] px-4 py-2 rounded focus:outline-none focus:border-[#C5A47E]" />
+                    </div>
+
+                    <div>
+                        <label for="subject" class="block mb-1 text-[#21242A] font-normal">Subject
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="subject" required
+                            class="w-full bg-[#EFEFEF] border border-[#DDDDDD] px-4 py-2 rounded focus:outline-none focus:border-[#C5A47E]" />
+                    </div>
+
+                    <div>
+                        <label for="message" class="block mb-1 text-[#21242A] font-normal">Message
+                            <span class="text-red-500">*</span>
+                        </label>
+                        <textarea id="message" rows="4" required
+                            class="w-full bg-[#EFEFEF] border border-[#DDDDDD] px-4 py-2 rounded focus:outline-none focus:border-[#C5A47E]"></textarea>
+                    </div>
+
+                    <div class="w-full flex justify-center mt-6">
+                        <button id="submitBtn" type="submit"
+                            class="relative bg-[#21242A] text-white px-8 py-3 rounded flex items-center justify-center gap-3 overflow-hidden font-light w-56 hover:bg-[#1b1d21]">
+
+                            <span class="relative z-10 flex items-center gap-3 w-full justify-center">
+                                <span id="buttonText"
+                                    class="whitespace-nowrap transition-opacity duration-300 opacity-100 absolute inset-0 flex items-center justify-center order-0">
+                                    Send Message
+                                </span>
+                                <span id="buttonSuccess"
+                                    class="whitespace-nowrap opacity-0 absolute inset-0 flex items-center justify-center text-white font-semibold order-0">
+                                    Success
+                                </span>
+                            </span>
+                            <span id="buttonIcon"
+                                class="w-7 h-7 border border-white rounded-full flex items-center justify-center transition-colors duration-300 flex-shrink-0 z-10 order-1">
+                                <i class="fa fa-arrow-right text-sm" aria-hidden="true"></i>
+                            </span>
+
+                            <!-- Green sliding overlay -->
+                            <span id="greenOverlay"
+                                class="absolute top-0 left-0 bottom-0 w-0 bg-green-600 rounded transition-all duration-500 ease-in-out z-0"></span>
+                        </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-[#22252B] text-[#D9D9D9] py-12 px-6 md:px-20">
+        <div class="mt-10 text-center text-sm text-gray-500">
+            &copy; 2025 Le Global Design. All rights reserved.
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+        // //form submit
+        // const form = document.querySelector('form');
+        // //Success message 
+        // form.addEventListener('submit', (e) => {
+        //     e.preventDefault();
+
+        //     if (!form.checkValidity()) {
+        //         // Let browser show validation errors
+        //         form.reportValidity();
+        //         return;
+        //     }
+        // });
+        // const btn = document.getElementById('submitBtn');
+        // const btnText = document.getElementById('buttonText');
+        // const btnSuccess = document.getElementById('buttonSuccess');
+        // const btnIcon = document.getElementById('buttonIcon');
+        // const greenOverlay = document.getElementById('greenOverlay');
+
+        // btn.addEventListener('click', (e) => {
+        //     e.preventDefault();
+
+        //     // Start green wipe
+        //     greenOverlay.style.width = '100%';
+
+        //     // After overlay covers button (match duration)
+        //     setTimeout(() => {
+        //         // Show success text and check icon
+        //         btnText.style.opacity = 0;
+        //         btnSuccess.style.opacity = 1;
+
+        //         btnIcon.classList.remove('border-white');
+        //         btnIcon.classList.add('border-green-300');
+        //         btnIcon.innerHTML = '<i class="fa fa-check text-green-300 text-sm"></i>';
+        //     }, 500);
+
+        //     // Revert after 3 seconds total
+        //     setTimeout(() => {
+        //         // Hide success text and revert icon
+        //         btnText.style.opacity = 1;
+        //         btnSuccess.style.opacity = 0;
+
+        //         btnIcon.classList.remove('border-green-300');
+        //         btnIcon.classList.add('border-white');
+        //         btnIcon.innerHTML = '<i class="fa fa-arrow-right text-sm" aria-hidden="true"></i>';
+
+        //         // Animate green wipe back
+        //         greenOverlay.style.width = '0%';
+        //     }, 3500);
+        // });
+        const form = document.querySelector('form');
+    const inputs = form.querySelectorAll('input[required], textarea[required]');
+
+    const btn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('buttonText');
+    const btnSuccess = document.getElementById('buttonSuccess');
+    const btnIcon = document.getElementById('buttonIcon');
+    const greenOverlay = document.getElementById('greenOverlay');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        let isValid = true;
+
+        // Reset all errors
+        inputs.forEach(input => {
+            input.classList.remove('border-red-500');
+            const existingError = input.parentElement.querySelector('.error-message');
+            if (existingError) existingError.remove();
+        });
+
+        // Validate each required field
+        inputs.forEach(input => {
+            if (!input.value.trim()) {
+                isValid = false;
+
+                input.classList.add('border-red-500');
+
+                const error = document.createElement('div');
+                error.className = 'text-red-500 text-xs mt-1 error-message';
+                error.innerText = 'This field is required';
+                input.parentElement.appendChild(error);
+
+                // Auto-remove after 3 seconds
+                setTimeout(() => {
+                    input.classList.remove('border-red-500');
+                    if (error) error.remove();
+                }, 3000);
+            }
+        });
+
+        // If any field is invalid, stop here
+        if (!isValid) return;
+
+        // --- Success Animation Below ---
+
+        greenOverlay.style.width = '100%';
+
+        setTimeout(() => {
+            btnText.style.opacity = 0;
+            btnSuccess.style.opacity = 1;
+
+            btnIcon.classList.remove('border-white');
+            btnIcon.classList.add('border-green-300');
+            btnIcon.innerHTML = '<i class="fa fa-check text-green-300 text-sm"></i>';
+        }, 500);
+
+        setTimeout(() => {
+            btnText.style.opacity = 1;
+            btnSuccess.style.opacity = 0;
+
+            btnIcon.classList.remove('border-green-300');
+            btnIcon.classList.add('border-white');
+            btnIcon.innerHTML = '<i class="fa fa-arrow-right text-sm" aria-hidden="true"></i>';
+
+            greenOverlay.style.width = '0%';
+            form.reset(); // Optional
+        }, 3500);
+    });
+
+    // AOS
+    document.addEventListener('DOMContentLoaded', () => {
+        AOS.init({
+            duration: 800,
+            once: true, // animate only once
+        });
+
+        // Mobile menu
+        //const menuBtn = document.getElementById('menu-btn');
+        //const mobileMenu = document.getElementById('mobile-menu');
+        //menuBtn.addEventListener('click', () => {
+        //    mobileMenu.classList.toggle('hidden');
+        //});
+    });
+    </script>
+</body>
+
+</html>

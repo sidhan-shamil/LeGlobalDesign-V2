@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Global Design</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            clash: ['"Clash Display"', 'sans-serif'],
+            montserrat: ['"Montserrat"', 'sans-serif'],
+          },
+          animation: {
+            'spin-slow': 'spin 6s linear infinite',
+            'marquee': 'marquee 30s linear infinite',
+          },
+          keyframes: {
+            spin: {
+              '0%': { transform: 'rotate(0deg)' },
+              '100%': { transform: 'rotate(360deg)' },
+            },
+            marquee: {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-50%)' },
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@600;700&family=Montserrat:wght@600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- AlpineJS -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Custom styles -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h2,
+    h3 {
+      font-family: 'Clash Display', sans-serif;
+    }
+
+    /* .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .minimal-scrollbar::-webkit-scrollbar {
+      width: 1px;
+    }
+
+    .minimal-scrollbar::-webkit-scrollbar-thumb {
+      background-color: #999;
+      border-radius: 10px;
+    } */
+  </style>
+</head>
+
+<body class="flex flex-col min-h-screen bg-[#f6f6f6]  overflow-x-hidden">
+  <!-- Header -->
+  <header
+    class="h-[80px] flex items-center justify-between px-6 py-6 md:px-20 bg-white/95 backdrop-blur-sm sticky top-0 z-50">
+    <h3 class="text-[20px] font-semibold uppercase text-[#21242A]">Le Global Design</h3>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 items-center gap-6">
+      <a href="index.html" class="text-[16px] font-semibold uppercase text-[#21242A] transition-colors">Home</a>
+      <a href="portfolio.html"
+        class="text-[16px] font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">Portfolio</a>
+      <a href="product.html"
+        class="text-[16px] font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">Product</a>
+      <a href="service.html"
+        class="text-[16px] font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">Service</a>
+      <a href="contact.html"
+        class="text-[16px] font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">Contact</a>
+    </nav>
+
+    <!-- Hamburger (Mobile) -->
+    <button id="menu-btn" class="lg:hidden focus:outline-none transition-transform hover:scale-105">
+      <svg class="w-6 h-6 text-[#21242A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </header>
+
+  <!-- Mobile Menu -->
+  <!-- Mobile Menu -->
+  <nav id="mobile-menu"
+    class="hidden lg:hidden bg-white border-t border-gray-200 absolute top-[80px] left-0 w-full z-40 shadow-md">
+    <div class="flex flex-col gap-4 px-6 py-4">
+      <a href="index.html"
+        class="text-lg font-semibold uppercase text-[#21242A] hover:text-gray-600 transition-colors">Home</a>
+      <a href="portfolio.html"
+        class="text-lg font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">Portfolio</a>
+      <a href="product.html"
+        class="text-lg font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">Product</a>
+      <a href="service.html"
+        class="text-lg font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">Service</a>
+      <a href="contact.html"
+        class="text-lg font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative" style="min-height: calc(100vh - 80px);">
+    <img src="assets/images/dc30850ec8165ea395efdb8b594c27460bad7f18.jpg" alt="Hero Image"
+      class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-100 z-10"></div>
+
+    <div class="absolute left-[24px] bottom-[24px] md:left-[54px] md:bottom-[41px] z-20">
+      <h2 data-aos="fade-up"
+        class="font-clash font-bold text-[28px] sm:text-[36px] md:text-[48px] lg:text-[60px] xl:text-[72px] leading-tight tracking-wide uppercase text-white">
+        We bring your dream <br />to life
+      </h2>
+    </div>
+  </section>
+
+
+  <!-- Portfolio Grid Section -->
+  <section class="py-12 pt-0 pb-0">
+    <div class="grid grid-cols-1 md:grid-cols-5 h-[544px]">
+      <div class="col-span-3 group relative overflow-hidden transition-transform duration-700 hover:scale-[1.015]">
+        <img src="assets/images/brick1.jpg" alt="Project A" class="w-full h-full object-cover" />
+        <div
+          class="project-label absolute bottom-0 left-0 w-full h-[80px] bg-white/20 backdrop-blur-sm shadow-lg border-t border-white/20 text-white text-base font-semibold flex items-center justify-center opacity-0 translate-y-full">
+          Project A
+        </div>
+      </div>
+
+      <div class="col-span-2 group relative overflow-hidden transition-transform duration-700 hover:scale-[1.015]">
+        <img src="assets/images/brick2.jpg" alt="Project B" class="w-full h-full object-cover" />
+        <div
+          class="project-label absolute bottom-0 left-0 w-full h-[80px] bg-white/20 backdrop-blur-sm shadow-lg border-t border-white/20 text-white text-base font-semibold flex items-center justify-center opacity-0 translate-y-full">
+          Project B
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-5 h-[544px]">
+      <div class="col-span-2 group relative overflow-hidden transition-transform duration-700 hover:scale-[1.015]">
+        <img src="assets/images/brick3.jpg" alt="Project C" class="w-full h-full object-cover" />
+        <div
+          class="project-label absolute bottom-0 left-0 w-full h-[80px] bg-white/20 backdrop-blur-sm shadow-lg border-t border-white/20 text-white text-base font-semibold flex items-center justify-center opacity-0 translate-y-full">
+          Project C
+        </div>
+      </div>
+      <a href="service.html"
+        class="col-span-3 bg-[#21242A] flex items-center justify-center group cursor-pointer hover:bg-[#1a1d23] transition-colors duration-300">
+        <div class="flex items-center gap-4 text-[#f6f6f6]" data-aos="fade-up">
+          <span class="text-xl md:text-2xl font-semibold uppercase">Explore more</span>
+          <div class="relative w-[48px] h-[48px] group-hover:scale-110 transition-transform duration-300">
+            <div class="absolute inset-0 rounded-full border-2 border-dashed border-[#f6f6f6] animate-spin-slow"></div>
+            <div class="flex items-center justify-center w-full h-full text-xl font-semibold">
+              <i class="fa fa-long-arrow-right w-7 h-7 flex items-center justify-center" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Trusted Partners Section -->
+  <section class="relative py-12 bg-white overflow-hidden">
+    <h2 class="trusted-heading text-center font-bold capitalize mb-12 text-[#21242A]
+    font-clash font-bold text-[28px] sm:text-[36px] md:text-[48px] lg:text-[60px] xl:text-[72px] leading-tight tracking-wide"
+      data-aos="fade-up">
+      Our Trusted Partners
+    </h2>
+
+    <div class="w-full overflow-hidden">
+      <div class="flex animate-marquee space-x-6 w-max will-change-transform" id="logo-scroll-wrapper"></div>
+    </div>
+
+    <!-- Logo Template -->
+    <template id="logo-template">
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_1.png" alt="Brand 1" class="max-w-[150px] max-h-[120px] object-contain"
+          />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_2.png" alt="Brand 2" class="max-w-[150px] max-h-[120px] object-contain"
+          />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_3.png" alt="Brand 3" class="max-w-[150px] max-h-[120px] object-contain"
+          />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_4.png" alt="Brand 4" class="max-w-[150px] max-h-[120px] object-contain"
+          />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_5.png" alt="Brand 5" class="max-w-[150px] max-h-[120px] object-contain"
+          />
+      </div>
+    </template>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="highlight-section relative flex items-center justify-center mt-4"
+    style="background-image: url('assets/images/side-image.jpg'); min-height: 700px; padding: 80px;">
+    <div class="bg-white rounded-xl grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl w-full mx-6 md:mx-auto shadow-2xl">
+        
+        <!-- Left: Text -->
+        <div class="relative flex flex-col items-center justify-center text-center px-6 py-10 md:px-16 lg:items-start lg:text-left lg:px-14 lg:py-20">
+            <!-- Button -->
+            <button data-aos="fade-up"
+                class="mb-6 h-[48px] bg-[#21242A] text-[#F6F6F6] px-6 rounded uppercase tracking-wider font-medium hover:bg-[#1a1d23] transition-colors duration-300">
+                About Us
+            </button>
+
+            <!-- Text -->
+            <div class="text-[#21242A] space-y-6 text-[16px] leading-[1.7]" data-aos="fade-up">
+                <p>
+                    We're proud to say that our design team has been in the business for over years. We are passionate about our
+                    work and always strive to create a timeless design. Perfection, in every detail. You can rest assured that
+                    we will take care of every detail of your project so you can focus on what matters most.
+                </p>
+                <p>
+                    Our experts are always ready to make your house a home. We're with you at every step — from consulting with
+                    you, to renovation, and finally finishing touches. You'll never miss a step with us by your side.
+                </p>
+                <p>
+                    Your home is our priority. No matter how big or small, we want your house to be the best place to live in
+                    and enjoy.
+                </p>
+            </div>
+        </div>
+
+        <!-- Right: Image (hidden below lg) -->
+        <div class="hidden lg:flex items-center justify-center p-8" data-aos="fade-left">
+            <img src="assets/images/side-image.jpg" alt="About Image" class="rounded-md shadow-lg max-w-full h-auto" />
+        </div>
+    </div>
+</section>
+
+
+  <!-- Contact Section -->
+  <section class="py-20 bg-[#21242A] text-center talk-today" id="talk-today">
+    <h2 class="capitalize text-[#f6f6f6] mb-8 font-montserrat font-bold text-[28px] sm:text-[36px] md:text-[48px] lg:text-[60px] xl:text-[72px] leading-tight tracking-wide" data-aos="fade-up">
+      Talk Today, Build <br>Tomorrow
+    </h2>
+
+    <a href="contact.html">
+      <button data-aos="fade-up"
+        class="mt-4 bg-[#f6f6f6] text-[#21242A] px-8 py-3 rounded uppercase tracking-wider text-[16px] leading-[32px] font-medium hover:bg-[#e2e2e2] transition-colors duration-300 transform hover:scale-105 inline-flex items-center gap-2">
+        Let's Talk
+        <span
+          class="w-7 h-7 border border-black rounded-full flex items-center justify-center transition-colors duration-300">
+          <i class="fa fa-arrow-right text-sm" aria-hidden="true"></i>
+        </span>
+      </button>
+    </a>
+
+  </section>
+
+  <!-- Services Section -->
+  <section class="flex flex-col lg:flex-row relative z-10 mt-4 mb-4">
+    <!-- Left Sticky Menu -->
+    <aside class="w-full lg:w-1/4 px-6 py-12 lg:py-24 sticky top-20 hidden lg:block self-start">
+      <ul id="side-nav" class="space-y-6 text-lg font-semibold uppercase tracking-wide">
+        <li><a href="#flooring" data-target="flooring" class="text-[#C5A47E]"><span>Flooring</span></a></li>
+        <li><a href="#upholstery" data-target="upholstery"
+            class="text-gray-400 hover:text-[#C5A47E] transition"><span>Upholstery</span></a></li>
+        <li><a href="#wallpaper" data-target="wallpaper"
+            class="text-gray-400 hover:text-[#C5A47E] transition"><span>Wallpaper</span></a></li>
+        <li><a href="#curtains" data-target="curtains"
+            class="text-gray-400 hover:text-[#C5A47E] transition"><span>Curtains</span></a></li>
+        <li><a href="#blinds" data-target="blinds"
+            class="text-gray-400 hover:text-[#C5A47E] transition"><span>Blinds</span></a></li>
+      </ul>
+
+    </aside>
+
+    <!-- Right Scrollable Content -->
+    <main class="w-full lg:w-3/4 space-y-12 px-6 lg:px-0">
+      <!-- Flooring -->
+      <section id="flooring" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <img src="assets/images/product-hero.jpg"
+            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in"
+            data-aos-delay="100"/>
+          <div class="max-w-xl" data-aos="fade-left" data-aos-delay="200">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Explore Our Curated Collection of Interior Elegance</h2>
+            <p class="text-gray-600 text-base leading-relaxed">
+              Discover premium flooring options designed to match every aesthetic. Whether it's wood, tile, or vinyl, we
+              transform floors into timeless beauty.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Upholstery -->
+      <section id="upholstery" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <img src="assets/images/portfolio-hero.jpg"
+            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in"
+            data-aos-delay="100" />
+          <div class="max-w-xl" data-aos="fade-left" data-aos-delay="200">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Upholstery That Redefines Comfort & Style</h2>
+            <p class="text-gray-600 text-base leading-relaxed">
+              Our custom upholstery adds softness and style. Choose from a rich palette of fabrics and textures to
+              upgrade your furniture’s appeal.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Wallpaper -->
+      <section id="wallpaper" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <img src="assets/images/product-hero.jpg"
+            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in"
+            data-aos-delay="100" />
+          <div class=" max-w-xl" data-aos="fade-left" data-aos-delay="200">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Wallpaper with Character & Elegance</h2>
+            <p class="text-gray-600 text-base leading-relaxed">
+              Wallpaper that elevates any room — choose from modern, vintage, or custom prints to reflect your unique
+              personality.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Curtains -->
+      <section id="curtains" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <img src="assets/images/brick1.jpg"
+            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in"
+            data-aos-delay="100" />
+          <div class=" max-w-xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Curtains Crafted for Style & Privacy</h2>
+            <p class="text-gray-600 text-base leading-relaxed">
+              Add a soft touch to your interiors with premium curtains tailored to perfection in colors and styles that
+              suit every mood.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Blinds -->
+      <section id="blinds" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <img src="assets/images/brick3.jpg"
+            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in"
+            data-aos-delay="100" />
+          <div class=" max-w-xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Functional & Stylish Window Blinds</h2>
+            <p class="text-gray-600 text-base leading-relaxed">
+              Modern blinds that offer light control, insulation, and privacy with a minimal and sleek aesthetic.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </section>
+  <footer class="bg-[#22252B] text-[#D9D9D9] py-12 px-6 md:px-20">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+      <!-- Section 1: Brand Info -->
+      <div>
+        <h2 class="text-2xl font-bold mb-4">LE GLOBAL DESIGN</h2>
+        <p class="text-gray-400 mb-6">
+          We bring your dream to life with unique designs and quality work that speaks louder than words.
+        </p>
+        <div class="flex gap-4 items-center">
+          <a href="#" aria-label="Instagram">
+            <!-- <img src="assets/icons/brand-instagram.svg" alt="Instagram" stroke-width="0.5" class="w-8 h-8 invert" /> -->
+             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg>
+          </a>
+          <a href="https://www.whatsapp.com" aria-label="WhatsApp">
+            <!-- <img src="assets/icons/brand-whatsapp.svg" alt="WhatsApp" stroke-width="0.5" class="w-8 h-8 invert" /> -->
+             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg>
+          </a>
+          <a href="tel:+123456789" aria-label="Call">
+            <!-- <img src="assets/icons/phone.svg" alt="Phone" stroke-width="0.5" class="w-8 h-8 invert" /> -->
+             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-phone"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" /></svg>
+          </a>
+      </div>
+
+
+      </div>
+
+      <!-- Section 2: Links -->
+      <div>
+        <h3 class="text-[#C5A47E] font-semibold mb-4">LINKS</h3>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+          <li><a href="portfolio.html" class="hover:text-white transition">Portfolio</a></li>
+          <li><a href="product.html" class="hover:text-white transition">Products</a></li>
+          <li><a href="service.html" class="hover:text-white transition">Services</a></li>
+          <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Section 3: Address -->
+      <div>
+        <h3 class="text-[#C5A47E] font-semibold mb-4">ADDRESS</h3>
+        <p class="text-gray-400 leading-relaxed">
+          124 Creative Studio Ave,<br />
+          2nd Floor, Design Plaza,<br />
+          New York, NY 10001, USA
+        </p>
+      </div>
+
+      <!-- Section 4: Contact Info -->
+      <div>
+        <h3 class="text-[#C5A47E] font-semibold mb-4">CONTACT</h3>
+        <ul class="text-gray-400 space-y-2">
+          <li>Email: <a href="mailto:hello@leglobal.com" class="hover:text-white transition">hello@leglobal.com</a></li>
+          <li>Phone: <a href="tel:+123456789" class="hover:text-white transition">+1 (234) 567-89</a></li>
+          <li>Support: <a href="#" class="hover:text-white transition">support.leglobal.com</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Optional bottom line -->
+    <div class="mt-10 text-center text-sm text-gray-500">
+      &copy; 2025 Le Global Design. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Clone logos for infinite scroll effect
+    document.addEventListener('DOMContentLoaded', () => {
+      const wrapper = document.getElementById('logo-scroll-wrapper');
+      const template = document.getElementById('logo-template');
+
+      for (let i = 0; i < 10; i++) {
+        const content = template.content.cloneNode(true);
+        wrapper.appendChild(content);
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // AOS init
+      AOS.init({
+        duration: 800,
+        once: true
+      });
+
+      const sections = document.querySelectorAll('main section');
+      const navLinks = document.querySelectorAll('#side-nav a');
+
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute('id');
+              navLinks.forEach(link => {
+                const span = link.querySelector('span');
+                if (link.dataset.target === id) {
+                  link.classList.add('text-[#C5A47E]');
+                  link.classList.remove('text-gray-400');
+                  span.innerText = `— ${span.dataset.original || span.innerText}`;
+                  span.dataset.original = span.dataset.original || span.innerText.replace('— ', '');
+                } else {
+                  link.classList.remove('text-[#C5A47E]');
+                  link.classList.add('text-gray-400');
+                  const original = span.dataset.original || span.innerText.replace('— ', '');
+                  span.innerText = original;
+                  span.dataset.original = original;
+                }
+              });
+            }
+          });
+        },
+        {
+          root: null,
+          rootMargin: '0px 0px -60% 0px',
+          threshold: 0.2
+        }
+      );
+
+      sections.forEach(section => observer.observe(section));
+    });
+
+  </script>
+</body>
+
+</html>
