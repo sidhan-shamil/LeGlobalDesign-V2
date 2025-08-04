@@ -5,14 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Le Global Design</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="40x40">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- AOS Animation Library -->
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
     <script>
         tailwind.config = {
             theme: {
@@ -56,10 +58,6 @@
             font-family: 'Clash Display', sans-serif;
 
         }
-
-        .floating-element {
-            animation: float 2s ease-in-out infinite;
-        }
     </style>
 </head>
 
@@ -68,7 +66,9 @@
     <!-- Header -->
     <header
         class="h-[80px] flex items-center justify-between px-6 py-6 md:px-20 bg-white/95 backdrop-blur-sm sticky top-0 z-50">
-        <h3 class="text-[20px] font-semibold uppercase text-[#21242A]">Le Global Design</h3>
+        <a href="index.html" class="block">
+            <img src="assets/images/logo.png" alt="Le Global Design Logo" class="h-[40px]">
+        </a>
 
         <!-- Desktop Navigation -->
         <nav class="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 items-center gap-6">
@@ -82,7 +82,7 @@
             </a>
             <a href="product.html"
                 class="text-[16px] font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">
-                Product
+                Products
             </a>
             <a href="service.html"
                 class="text-[16px] font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">
@@ -91,7 +91,7 @@
             <a href="contact.html" class="text-[16px] font-semibold uppercase text-[#21242A] transition-colors">
                 Contact
             </a>
-        </nav> 
+        </nav>
 
 
         <!-- Hamburger (Mobile) -->
@@ -114,11 +114,11 @@
         </a>
         <a href="product.html"
             class="text-lg font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">
-            Product
+            Products
         </a>
         <a href="service.html"
             class="text-lg font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">
-            Service
+            Services
         </a>
         <a href="contact.html"
             class="text-lg font-semibold uppercase text-[#21242A] hover:text-gray-600 transition-colors">
@@ -133,8 +133,8 @@
             <!-- Left: Contact Info -->
             <div class="w-full lg:w-3/5 px-6 md:pl-20 md:pr-10 py-10 flex flex-col justify-center">
                 <div class="space-y-6">
-                    <!-- <h1 class="text-6xl font-extrabold text-[#21242A] mb-3">GET IN TOUCH</h1> -->
-                    <h1 data-aos="fade-up" class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-[#21242A] mb-3 floating-element">
+                    <h1 data-aos="fade-up"
+                        class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-[#21242A] mb-3 floating-element">
                         GET IN TOUCH
                     </h1>
 
@@ -177,21 +177,25 @@
             </div>
 
             <!-- Right: Image -->
-            <div data-aos="fade-left" class="hidden lg:block w-full lg:w-2/5 relative h-full overflow-hidden lg:rounded-l-xl">
+            <div data-aos="fade-left"
+                class="hidden lg:block w-full lg:w-2/5 relative h-full overflow-hidden lg:rounded-l-xl">
                 <img src="assets/images/contact-cover.jpg" alt="Contact Cover" class="w-full h-full object-cover" />
                 <div class="absolute inset-0 bg-black/30 z-10"></div>
             </div>
+
 
             <div
                 class="lg:absolute lg:top-1/2 lg:left-[65%] lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 w-full lg:w-[30%] bg-white p-6 md:p-8 shadow-2xl rounded-lg z-10 mt-10 lg:mt-0">
 
                 <h3 data-aos="fade-left" class="text-2xl font-bold mb-6 text-[#21242A]">Drop Me a Line</h3>
-                <form class="space-y-4 text-sm text-[#21242A]">
+                <form id="contact-form" class="space-y-4 text-sm text-[#21242A]"
+                    action="https://formsubmit.co/sidhanshamil3@gmail.com" method="POST">
                     <div>
+                        <input type="hidden" name="_captcha" value="false">
                         <label for="name" class="block mb-1 text-[#21242A] font-normal">Name
                             <span class="text-red-500">*</span>
                         </label>
-                        <input type="text" id="name" required
+                        <input name="name" type="text" id="name" required
                             class="w-full bg-[#EFEFEF] border border-[#DDDDDD] px-4 py-2 rounded focus:outline-none focus:border-[#C5A47E]" />
                     </div>
 
@@ -199,7 +203,7 @@
                         <label for="email" class="block mb-1 text-[#21242A] font-normal">Email
                             <span class="text-red-500">*</span>
                         </label>
-                        <input type="email" id="email" required
+                        <input name="email" type="email" id="email" required
                             class="w-full bg-[#EFEFEF] border border-[#DDDDDD] px-4 py-2 rounded focus:outline-none focus:border-[#C5A47E]" />
                     </div>
 
@@ -207,7 +211,7 @@
                         <label for="phone" class="block mb-1 text-[#21242A] font-normal">Phone Number
                             <span class="text-red-500">*</span>
                         </label>
-                        <input type="number" id="phone" required
+                        <input name="number" type="number" id="phone" required
                             class="w-full bg-[#EFEFEF] border border-[#DDDDDD] px-4 py-2 rounded focus:outline-none focus:border-[#C5A47E]" />
                     </div>
 
@@ -215,7 +219,7 @@
                         <label for="subject" class="block mb-1 text-[#21242A] font-normal">Subject
                             <span class="text-red-500">*</span>
                         </label>
-                        <input type="text" id="subject" required
+                        <input name="subject" type="text" id="subject" required
                             class="w-full bg-[#EFEFEF] border border-[#DDDDDD] px-4 py-2 rounded focus:outline-none focus:border-[#C5A47E]" />
                     </div>
 
@@ -223,7 +227,7 @@
                         <label for="message" class="block mb-1 text-[#21242A] font-normal">Message
                             <span class="text-red-500">*</span>
                         </label>
-                        <textarea id="message" rows="4" required
+                        <textarea name="message" id="message" rows="4" required
                             class="w-full bg-[#EFEFEF] border border-[#DDDDDD] px-4 py-2 rounded focus:outline-none focus:border-[#C5A47E]"></textarea>
                     </div>
 
@@ -254,13 +258,20 @@
             </div>
         </div>
     </section>
+    <!-- Thank You Modal -->
+    <div id="thankYouModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white px-8 py-6 rounded shadow-lg text-center max-w-sm w-full">
+            <h2 class="text-xl font-semibold text-[#21242A] mb-2">Thank You!</h2>
+            <p class="text-gray-600">We’ll contact you as soon as possible.</p>
+        </div>
+    </div>
     <footer class="bg-[#22252B] text-[#D9D9D9] py-12 px-6 md:px-20">
         <div class="mt-10 text-center text-sm text-gray-500">
             &copy; 2025 Le Global Design. All rights reserved.
         </div>
     </footer>
+    
     <script>
-        // Mobile menu toggle
         document.addEventListener('DOMContentLoaded', () => {
             const menuBtn = document.getElementById('menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -268,141 +279,108 @@
             menuBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
-        });
-        // //form submit
-        // const form = document.querySelector('form');
-        // //Success message 
-        // form.addEventListener('submit', (e) => {
-        //     e.preventDefault();
 
-        //     if (!form.checkValidity()) {
-        //         // Let browser show validation errors
-        //         form.reportValidity();
-        //         return;
-        //     }
-        // });
-        // const btn = document.getElementById('submitBtn');
-        // const btnText = document.getElementById('buttonText');
-        // const btnSuccess = document.getElementById('buttonSuccess');
-        // const btnIcon = document.getElementById('buttonIcon');
-        // const greenOverlay = document.getElementById('greenOverlay');
+            const form = document.querySelector('form');
+            const inputs = form.querySelectorAll('input[required], textarea[required]');
 
-        // btn.addEventListener('click', (e) => {
-        //     e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('buttonText');
+            const btnSuccess = document.getElementById('buttonSuccess');
+            const btnIcon = document.getElementById('buttonIcon');
+            const greenOverlay = document.getElementById('greenOverlay');
 
-        //     // Start green wipe
-        //     greenOverlay.style.width = '100%';
+            form.addEventListener('submit', (e) => {
+                e.preventDefault(); // ✅ PREVENT REDIRECT
 
-        //     // After overlay covers button (match duration)
-        //     setTimeout(() => {
-        //         // Show success text and check icon
-        //         btnText.style.opacity = 0;
-        //         btnSuccess.style.opacity = 1;
+                let isValid = true;
 
-        //         btnIcon.classList.remove('border-white');
-        //         btnIcon.classList.add('border-green-300');
-        //         btnIcon.innerHTML = '<i class="fa fa-check text-green-300 text-sm"></i>';
-        //     }, 500);
-
-        //     // Revert after 3 seconds total
-        //     setTimeout(() => {
-        //         // Hide success text and revert icon
-        //         btnText.style.opacity = 1;
-        //         btnSuccess.style.opacity = 0;
-
-        //         btnIcon.classList.remove('border-green-300');
-        //         btnIcon.classList.add('border-white');
-        //         btnIcon.innerHTML = '<i class="fa fa-arrow-right text-sm" aria-hidden="true"></i>';
-
-        //         // Animate green wipe back
-        //         greenOverlay.style.width = '0%';
-        //     }, 3500);
-        // });
-        const form = document.querySelector('form');
-    const inputs = form.querySelectorAll('input[required], textarea[required]');
-
-    const btn = document.getElementById('submitBtn');
-    const btnText = document.getElementById('buttonText');
-    const btnSuccess = document.getElementById('buttonSuccess');
-    const btnIcon = document.getElementById('buttonIcon');
-    const greenOverlay = document.getElementById('greenOverlay');
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        let isValid = true;
-
-        // Reset all errors
-        inputs.forEach(input => {
-            input.classList.remove('border-red-500');
-            const existingError = input.parentElement.querySelector('.error-message');
-            if (existingError) existingError.remove();
-        });
-
-        // Validate each required field
-        inputs.forEach(input => {
-            if (!input.value.trim()) {
-                isValid = false;
-
-                input.classList.add('border-red-500');
-
-                const error = document.createElement('div');
-                error.className = 'text-red-500 text-xs mt-1 error-message';
-                error.innerText = 'This field is required';
-                input.parentElement.appendChild(error);
-
-                // Auto-remove after 3 seconds
-                setTimeout(() => {
+                // Reset all errors
+                inputs.forEach(input => {
                     input.classList.remove('border-red-500');
-                    if (error) error.remove();
-                }, 3000);
-            }
+                    const existingError = input.parentElement.querySelector('.error-message');
+                    if (existingError) existingError.remove();
+                });
+
+                // Validate each required field
+                inputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        isValid = false;
+
+                        input.classList.add('border-red-500');
+                        const error = document.createElement('div');
+                        error.className = 'text-red-500 text-xs mt-1 error-message';
+                        error.innerText = 'This field is required';
+                        input.parentElement.appendChild(error);
+
+                        setTimeout(() => {
+                            input.classList.remove('border-red-500');
+                            if (error) error.remove();
+                        }, 3000);
+                    }
+                });
+
+                if (!isValid) return;
+
+                // ✅ Send form via fetch
+                const formData = new FormData(form);
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        // ✅ Success animation
+                        greenOverlay.style.width = '100%';
+
+                        setTimeout(() => {
+                            btnText.style.opacity = 0;
+                            btnSuccess.style.opacity = 1;
+
+                            btnIcon.classList.remove('border-white');
+                            btnIcon.classList.add('border-green-300');
+                            btnIcon.innerHTML = '<i class="fa fa-check text-green-300 text-sm"></i>';
+                        }, 500);
+
+                        setTimeout(() => {
+                            btnText.style.opacity = 1;
+                            btnSuccess.style.opacity = 0;
+
+                            btnIcon.classList.remove('border-green-300');
+                            btnIcon.classList.add('border-white');
+                            btnIcon.innerHTML = '<i class="fa fa-arrow-right text-sm" aria-hidden="true"></i>';
+
+                            greenOverlay.style.width = '0%';
+                            form.reset();
+
+                            // ✅ Show Thank You Modal
+                            const thankYouModal = document.getElementById('thankYouModal');
+                            thankYouModal.classList.remove('hidden');
+
+                            // ✅ Hide it after 3.5 seconds
+                            setTimeout(() => {
+                                thankYouModal.classList.add('hidden');
+                            }, 3500);
+                        }, 3500)
+                    } else {
+                        alert("Something went wrong! Please try again later.");
+                    }
+                }).catch(error => {
+                    alert("Error submitting form.");
+                    console.error(error);
+                });
+            });
+
+            // AOS init
+            AOS.init({
+                duration: 800,
+                once: true,
+            });
         });
-
-        // If any field is invalid, stop here
-        if (!isValid) return;
-
-        // --- Success Animation Below ---
-
-        greenOverlay.style.width = '100%';
-
-        setTimeout(() => {
-            btnText.style.opacity = 0;
-            btnSuccess.style.opacity = 1;
-
-            btnIcon.classList.remove('border-white');
-            btnIcon.classList.add('border-green-300');
-            btnIcon.innerHTML = '<i class="fa fa-check text-green-300 text-sm"></i>';
-        }, 500);
-
-        setTimeout(() => {
-            btnText.style.opacity = 1;
-            btnSuccess.style.opacity = 0;
-
-            btnIcon.classList.remove('border-green-300');
-            btnIcon.classList.add('border-white');
-            btnIcon.innerHTML = '<i class="fa fa-arrow-right text-sm" aria-hidden="true"></i>';
-
-            greenOverlay.style.width = '0%';
-            form.reset(); // Optional
-        }, 3500);
-    });
-
-    // AOS
-    document.addEventListener('DOMContentLoaded', () => {
-        AOS.init({
-            duration: 800,
-            once: true, // animate only once
-        });
-
-        // Mobile menu
-        //const menuBtn = document.getElementById('menu-btn');
-        //const mobileMenu = document.getElementById('mobile-menu');
-        //menuBtn.addEventListener('click', () => {
-        //    mobileMenu.classList.toggle('hidden');
-        //});
-    });
     </script>
+
 </body>
 
 </html>

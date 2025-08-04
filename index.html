@@ -6,8 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Le Global Design</title>
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="40x40">
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <script src="main.js"></script> -->
   <script>
     tailwind.config = {
       theme: {
@@ -17,8 +20,8 @@
             montserrat: ['"Montserrat"', 'sans-serif'],
           },
           animation: {
-            'spin-slow': 'spin 6s linear infinite',
-            'marquee': 'marquee 30s linear infinite',
+            'spin-slow': 'spin 60s linear infinite',
+            'marquee': 'marquee 240s linear infinite'
           },
           keyframes: {
             spin: {
@@ -49,6 +52,7 @@
   <!-- AOS Library -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="style.css">
 
   <!-- Custom styles -->
   <style>
@@ -66,24 +70,6 @@
     h3 {
       font-family: 'Clash Display', sans-serif;
     }
-
-    /* .scrollbar-hide::-webkit-scrollbar {
-      display: none;
-    }
-
-    .scrollbar-hide {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-
-    .minimal-scrollbar::-webkit-scrollbar {
-      width: 1px;
-    }
-
-    .minimal-scrollbar::-webkit-scrollbar-thumb {
-      background-color: #999;
-      border-radius: 10px;
-    } */
   </style>
 </head>
 
@@ -91,7 +77,9 @@
   <!-- Header -->
   <header
     class="h-[80px] flex items-center justify-between px-6 py-6 md:px-20 bg-white/95 backdrop-blur-sm sticky top-0 z-50">
-    <h3 class="text-[20px] font-semibold uppercase text-[#21242A]">Le Global Design</h3>
+    <a href="index.html" class="block">
+      <img src="assets/images/logo.png" alt="Le Global Design Logo" class="h-[40px]">
+    </a>
 
     <!-- Desktop Navigation -->
     <nav class="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 items-center gap-6">
@@ -99,9 +87,9 @@
       <a href="portfolio.html"
         class="text-[16px] font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">Portfolio</a>
       <a href="product.html"
-        class="text-[16px] font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">Product</a>
+        class="text-[16px] font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">Products</a>
       <a href="service.html"
-        class="text-[16px] font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">Service</a>
+        class="text-[16px] font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">Services</a>
       <a href="contact.html"
         class="text-[16px] font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">Contact</a>
     </nav>
@@ -115,7 +103,6 @@
   </header>
 
   <!-- Mobile Menu -->
-  <!-- Mobile Menu -->
   <nav id="mobile-menu"
     class="hidden lg:hidden bg-white border-t border-gray-200 absolute top-[80px] left-0 w-full z-40 shadow-md">
     <div class="flex flex-col gap-4 px-6 py-4">
@@ -124,9 +111,9 @@
       <a href="portfolio.html"
         class="text-lg font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">Portfolio</a>
       <a href="product.html"
-        class="text-lg font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">Product</a>
+        class="text-lg font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">Products</a>
       <a href="service.html"
-        class="text-lg font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">Service</a>
+        class="text-lg font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">Services</a>
       <a href="contact.html"
         class="text-lg font-semibold uppercase text-gray-400 hover:text-[#21242A] transition-colors">Contact</a>
     </div>
@@ -192,7 +179,8 @@
 
   <!-- Trusted Partners Section -->
   <section class="relative py-12 bg-white overflow-hidden">
-    <h2 class="trusted-heading text-center font-bold capitalize mb-12 text-[#21242A]
+    <h2
+      class="trusted-heading text-center font-bold capitalize mb-12 text-[#21242A]
     font-clash font-bold text-[28px] sm:text-[36px] md:text-[48px] lg:text-[60px] xl:text-[72px] leading-tight tracking-wide"
       data-aos="fade-up">
       Our Trusted Partners
@@ -206,28 +194,174 @@
     <template id="logo-template">
       <div
         class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
-        <img src="assets/images/logos/prod_1.png" alt="Brand 1" class="max-w-[150px] max-h-[120px] object-contain"
-          />
+        <img src="assets/images/logos/prod_1.png" alt="Brand 1" class="max-w-[150px] max-h-[120px] object-contain" />
       </div>
       <div
         class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
-        <img src="assets/images/logos/prod_2.png" alt="Brand 2" class="max-w-[150px] max-h-[120px] object-contain"
-          />
+        <img src="assets/images/logos/prod_2.png" alt="Brand 2" class="max-w-[150px] max-h-[120px] object-contain" />
       </div>
       <div
         class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
-        <img src="assets/images/logos/prod_3.png" alt="Brand 3" class="max-w-[150px] max-h-[120px] object-contain"
-          />
+        <img src="assets/images/logos/prod_3.png" alt="Brand 3" class="max-w-[150px] max-h-[120px] object-contain" />
       </div>
       <div
         class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
-        <img src="assets/images/logos/prod_4.png" alt="Brand 4" class="max-w-[150px] max-h-[120px] object-contain"
-          />
+        <img src="assets/images/logos/prod_4.png" alt="Brand 4" class="max-w-[150px] max-h-[120px] object-contain" />
       </div>
       <div
         class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
-        <img src="assets/images/logos/prod_5.png" alt="Brand 5" class="max-w-[150px] max-h-[120px] object-contain"
-          />
+        <img src="assets/images/logos/prod_5.png" alt="Brand 5" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_6.png" alt="Brand 6" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_7.png" alt="Brand 7" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_8.png" alt="Brand 8" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_9.png" alt="Brand 9" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_10.png" alt="Brand 10" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_11.png" alt="Brand 11" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_12.png" alt="Brand 12" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_13.png" alt="Brand 13" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_14.png" alt="Brand 14" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_15.png" alt="Brand 15" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_16.png" alt="Brand 16" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_17.png" alt="Brand 17" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_18.png" alt="Brand 18" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_19.png" alt="Brand 19" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_20.png" alt="Brand 20" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_21.png" alt="Brand 21" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_22.png" alt="Brand 22" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div><div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_23.png" alt="Brand 23" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_24.png" alt="Brand 24" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_25.png" alt="Brand 25" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_26.png" alt="Brand 26" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_27.png" alt="Brand 27" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_28.png" alt="Brand 28" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_29.png" alt="Brand 29" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_30.png" alt="Brand 30" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_31.png" alt="Brand 31" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_32.png" alt="Brand 32" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_33.png" alt="Brand 33" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_34.png" alt="Brand 34" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_35.png" alt="Brand 35" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_36.png" alt="Brand 36" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_37.png" alt="Brand 37" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_38.png" alt="Brand 38" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_39.png" alt="Brand 39" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_40.png" alt="Brand 40" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_41.png" alt="Brand 41" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_42.png" alt="Brand 42" class="max-w-[150px] max-h-[120px] object-contain" />
+      </div>
+      <div
+        class="logo-card flex items-center justify-center w-[240px] h-[170px] border border-[#D9D9D9] rounded-md bg-white shrink-0 transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+        <img src="assets/images/logos/prod_43.png" alt="Brand 43" class="max-w-[150px] max-h-[120px] object-contain" />
       </div>
     </template>
   </section>
@@ -236,44 +370,47 @@
   <section class="highlight-section relative flex items-center justify-center mt-4"
     style="background-image: url('assets/images/side-image.jpg'); min-height: 700px; padding: 80px;">
     <div class="bg-white rounded-xl grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl w-full mx-6 md:mx-auto shadow-2xl">
-        
-        <!-- Left: Text -->
-        <div class="relative flex flex-col items-center justify-center text-center px-6 py-10 md:px-16 lg:items-start lg:text-left lg:px-14 lg:py-20">
-            <!-- Button -->
-            <button data-aos="fade-up"
-                class="mb-6 h-[48px] bg-[#21242A] text-[#F6F6F6] px-6 rounded uppercase tracking-wider font-medium hover:bg-[#1a1d23] transition-colors duration-300">
-                About Us
-            </button>
 
-            <!-- Text -->
-            <div class="text-[#21242A] space-y-6 text-[16px] leading-[1.7]" data-aos="fade-up">
-                <p>
-                    We're proud to say that our design team has been in the business for over years. We are passionate about our
-                    work and always strive to create a timeless design. Perfection, in every detail. You can rest assured that
-                    we will take care of every detail of your project so you can focus on what matters most.
-                </p>
-                <p>
-                    Our experts are always ready to make your house a home. We're with you at every step — from consulting with
-                    you, to renovation, and finally finishing touches. You'll never miss a step with us by your side.
-                </p>
-                <p>
-                    Your home is our priority. No matter how big or small, we want your house to be the best place to live in
-                    and enjoy.
-                </p>
-            </div>
-        </div>
+      <!-- Left: Text -->
+      <div
+        class="relative flex flex-col items-center justify-center text-center px-6 py-10 md:px-16 lg:items-start lg:text-left lg:px-14 lg:py-20">
+        <!-- Button -->
+        <button data-aos="fade-up"
+          class="mb-6 h-[48px] bg-[#21242A] text-[#F6F6F6] px-6 rounded uppercase tracking-wider font-medium hover:bg-[#1a1d23] transition-colors duration-300">
+          About Us
+        </button>
 
-        <!-- Right: Image (hidden below lg) -->
-        <div class="hidden lg:flex items-center justify-center p-8" data-aos="fade-left">
-            <img src="assets/images/side-image.jpg" alt="About Image" class="rounded-md shadow-lg max-w-full h-auto" />
+        <!-- Text -->
+        <div class="text-[#21242A] space-y-6 text-[16px] leading-[1.7]" data-aos="fade-up">
+          <p>
+            We're proud to say that our design team has been in the business for over years. We are passionate about our
+            work and always strive to create a timeless design. Perfection, in every detail. You can rest assured that
+            we will take care of every detail of your project so you can focus on what matters most.
+          </p>
+          <p>
+            Our experts are always ready to make your house a home. We're with you at every step — from consulting with
+            you, to renovation, and finally finishing touches. You'll never miss a step with us by your side.
+          </p>
+          <p>
+            Your home is our priority. No matter how big or small, we want your house to be the best place to live in
+            and enjoy.
+          </p>
         </div>
+      </div>
+
+      <!-- Right: Image (hidden below lg) -->
+      <div class="hidden lg:flex items-center justify-center p-8" data-aos="fade-left">
+        <img src="assets/images/side-image.jpg" alt="About Image" class="rounded-md shadow-lg max-w-full h-auto" />
+      </div>
     </div>
-</section>
+  </section>
 
 
   <!-- Contact Section -->
   <section class="py-20 bg-[#21242A] text-center talk-today" id="talk-today">
-    <h2 class="capitalize text-[#f6f6f6] mb-8 font-montserrat font-bold text-[28px] sm:text-[36px] md:text-[48px] lg:text-[60px] xl:text-[72px] leading-tight tracking-wide" data-aos="fade-up">
+    <h2
+      class="capitalize text-[#f6f6f6] mb-8 font-montserrat font-bold text-[28px] sm:text-[36px] md:text-[48px] lg:text-[60px] xl:text-[72px] leading-tight tracking-wide"
+      data-aos="fade-up">
       Talk Today, Build <br>Tomorrow
     </h2>
 
@@ -291,31 +428,69 @@
   </section>
 
   <!-- Services Section -->
-  <section class="flex flex-col lg:flex-row relative z-10 mt-4 mb-4">
+  <section class="flex flex-col lg:flex-row relative z-10">
     <!-- Left Sticky Menu -->
     <aside class="w-full lg:w-1/4 px-6 py-12 lg:py-24 sticky top-20 hidden lg:block self-start">
       <ul id="side-nav" class="space-y-6 text-lg font-semibold uppercase tracking-wide">
+        <li><a href="#wallpaper" data-target="wallpaper" class="text-gray-400 hover:text-[#C5A47E] transition"><span>Wallpapers</span></a></li>
+        <li><a href="#fabrics" data-target="fabrics" class="text-[#C5A47E]"><span>Fabrics</span></a></li>
         <li><a href="#flooring" data-target="flooring" class="text-[#C5A47E]"><span>Flooring</span></a></li>
-        <li><a href="#upholstery" data-target="upholstery"
-            class="text-gray-400 hover:text-[#C5A47E] transition"><span>Upholstery</span></a></li>
-        <li><a href="#wallpaper" data-target="wallpaper"
-            class="text-gray-400 hover:text-[#C5A47E] transition"><span>Wallpaper</span></a></li>
-        <li><a href="#curtains" data-target="curtains"
-            class="text-gray-400 hover:text-[#C5A47E] transition"><span>Curtains</span></a></li>
-        <li><a href="#blinds" data-target="blinds"
-            class="text-gray-400 hover:text-[#C5A47E] transition"><span>Blinds</span></a></li>
+        <li><a href="#upholstery" data-target="upholstery" class="text-gray-400 hover:text-[#C5A47E] transition"><span>Upholstery</span></a></li>
+        <li><a href="#SpacePlanning" data-target="SpacePlanning" class="text-gray-400 hover:text-[#C5A47E] transition"><span>Space Planning</span></a></li>
+        <li><a href="#DesignConsultation" data-target="DesignConsultation" class="text-gray-400 hover:text-[#C5A47E] transition"><span>Design Consultation</span></a></li>
+        <li><a href="#WallCoverings" data-target="WallCoverings" class="text-gray-400 hover:text-[#C5A47E] transition"><span>Wall Coverings</span></a></li>
+        <li><a href="#Carpeting" data-target="Carpeting" class="text-gray-400 hover:text-[#C5A47E] transition"><span>Carpeting</span></a></li>
+        <li><a href="#OutdoorFabrics" data-target="OutdoorFabrics" class="text-gray-400 hover:text-[#C5A47E] transition"><span>Outdoor Fabrics</span></a></li>
+        <li><a href="#OutdoorDecking" data-target="OutdoorDecking" class="text-gray-400 hover:text-[#C5A47E] transition"><span>Outdoor Decking</span></a></li>
+        <li><a href="#StringCurtains" data-target="StringCurtains" class="text-gray-400 hover:text-[#C5A47E] transition"><span>String Curtains</span></a></li>
+        <li><a href="#GenuineLeather" data-target="GenuineLeather/Hides" class="text-gray-400 hover:text-[#C5A47E] transition"><span>Genuine Leather/Hides</span></a></li>
+        <li><a href="#WindowTreatmentBlinds" data-target="WindowTreatmentBlinds" class="text-gray-400 hover:text-[#C5A47E] transition"><span>Window Treatment – Blinds</span></a></li>
+        <li><a href="#Trimmings" data-target="Trimmings&Accessories" class="text-gray-400 hover:text-[#C5A47E] transition"><span>Trimmings & Accessories</span></a></li>
+        <li><a href="#Lighting&Lamps" data-target="Lighting&Lamps" class="text-gray-400 hover:text-[#C5A47E] transition"><span>Lighting & Lamps</span></a></li>
+        <li><a href="#Furniture" data-target="Furniture" class="text-gray-400 hover:text-[#C5A47E] transition"><span>Furniture</span></a></li>
+        <li><a href="#Linens" data-target="Linens" class="text-gray-400 hover:text-[#C5A47E] transition"><span>Linens</span></a></li>
       </ul>
 
     </aside>
 
     <!-- Right Scrollable Content -->
     <main class="w-full lg:w-3/4 space-y-12 px-6 lg:px-0">
+
+      <!-- Wallpaper -->
+      <section id="wallpaper" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <img src="assets/images/brick1.jpg"
+            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in" data-aos-delay="100" />
+          <div class=" max-w-xl" data-aos="fade-left" data-aos-delay="200">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Wallpaper with Character & Elegance</h2>
+          <p class="text-gray-600 text-base leading-relaxed">
+            Wallpaper that elevates any room — choose from modern, vintage, or custom prints to reflect your unique
+            personality.
+          </p>
+        </div>
+        </div>
+      </section>
+
+      <!-- Fabrics -->
+      <section id="fabrics" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <img src="assets/images/fabrics.jpg"
+            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in" data-aos-delay="100" />
+          <div class=" max-w-xl" data-aos="fade-left" data-aos-delay="200">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Fabrics</h2>
+          <p class="text-gray-600 text-base leading-relaxed">
+            This special selection of linen, cotton, and silk fabrics will let you finally pick the perfect fabric for your draperies and curtains. With our all types of fabrics, you can pick designs such as super bright florals to subtler stripes - all in eye-catching floral patterns!
+          </p>
+        </div>
+        </div>
+      </section>
+
       <!-- Flooring -->
       <section id="flooring" data-aos="fade-up">
         <div class="flex flex-col md:flex-row items-center gap-10">
-          <img src="assets/images/product-hero.jpg"
+          <img src="assets/images/flooring.jpg"
             class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in"
-            data-aos-delay="100"/>
+            data-aos-delay="100" />
           <div class="max-w-xl" data-aos="fade-left" data-aos-delay="200">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Explore Our Curated Collection of Interior Elegance</h2>
             <p class="text-gray-600 text-base leading-relaxed">
@@ -329,7 +504,7 @@
       <!-- Upholstery -->
       <section id="upholstery" data-aos="fade-up">
         <div class="flex flex-col md:flex-row items-center gap-10">
-          <img src="assets/images/portfolio-hero.jpg"
+          <img src="assets/images/upholstory.jpg"
             class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in"
             data-aos-delay="100" />
           <div class="max-w-xl" data-aos="fade-left" data-aos-delay="200">
@@ -342,18 +517,190 @@
         </div>
       </section>
 
+      <!-- SpacePlanning -->
+       <section id="SpacePlanning" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <img src="assets/images/space-planning.jpg"
+            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in"
+            data-aos-delay="100" />
+          <div class="max-w-xl" data-aos="fade-left" data-aos-delay="200">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Thoughtful Space Planning & Optimization</h2>
+            <p class="text-gray-600 text-base leading-relaxed">
+              Unlock your space’s full potential with our professional layout and space planning solutions. 
+              We create efficient, harmonious environments that balance functionality with visual appeal—whether it’s a cozy home or a busy office.
+            </p>
+          </div>
+        </div>
+      </section>
+       <!-- DesignConsultation -->
+        <section id="DesignConsultation" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <img src="assets/images/design-consultation.jpg"
+            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in" data-aos-delay="100" />
+          <div class=" max-w-xl" data-aos="fade-left" data-aos-delay="200">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Personalized Design Consultation</h2>
+          <p class="text-gray-600 text-base leading-relaxed">
+            Our expert designers collaborate with you to discover your style, preferences, and needs,
+             offering tailored advice and creative solutions. Make design decisions with confidence, from concept to implementation.
+          </p>
+        </div>
+        </div>
+      </section>
+        <!-- WallCoverings -->
+         <section id="WallCoverings" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <img src="assets/images/wall-coverings.jpg"
+            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in"
+            data-aos-delay="100" />
+          <div class="max-w-xl" data-aos="fade-left" data-aos-delay="200">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Artful Wall Coverings</h2>
+            <p class="text-gray-600 text-base leading-relaxed">
+             Elevate any space with our curated selection of wall coverings—from textured finishes 
+             to contemporary murals. Our solutions bring color, pattern, and unique character, enhancing both commercial and residential interiors.
+            </p>
+          </div>
+        </div>
+      </section>
+         <!-- Carpeting -->
+          <section id="Carpeting" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <img src="assets/images/carpets.jpg"
+            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in" data-aos-delay="100" />
+          <div class=" max-w-xl" data-aos="fade-left" data-aos-delay="200">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Premium Carpeting for Every Environment</h2>
+          <p class="text-gray-600 text-base leading-relaxed">
+            Transform your floors with luxurious carpets in a variety of colors, patterns, and textures. 
+            Our products offer warmth, comfort, and sound insulation—ideal for both homes and hospitality spaces.
+          </p>
+        </div>
+        </div>
+      </section>
 
-      <!-- Wallpaper -->
-      <section id="wallpaper" data-aos="fade-up">
+          <!--  OutdoorFabrics -->
+            <section id="OutdoorFabrics" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <img src="assets/images/outdoor-fabrics.jpg"
+            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in"
+            data-aos-delay="100" />
+          <div class="max-w-xl" data-aos="fade-left" data-aos-delay="200">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Durable & Stylish Outdoor Fabrics</h2>
+            <p class="text-gray-600 text-base leading-relaxed">
+              Bring indoor style outdoors with our weather-resistant fabrics. Perfect for patios and gardens, these textiles combine durability with design, offering vibrant options that withstand sun and rain.
+            </p>
+          </div>
+        </div>
+      </section>
+            <!-- OutdoorDecking -->
+             <section id="OutdoorDecking" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <img src="assets/images/outdoor-decking.jpg"
+            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in" data-aos-delay="100" />
+          <div class=" max-w-xl" data-aos="fade-left" data-aos-delay="200">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Contemporary Outdoor Decking</h2>
+          <p class="text-gray-600 text-base leading-relaxed">
+            Redefine your outdoor spaces with sustainable, low-maintenance decking solutions.
+             Choose from natural wood, composite, and innovative textures to create inviting areas for relaxation and entertaining.
+          </p>
+        </div>
+        </div>
+      </section>
+             <!-- StringCurtains -->
+              <section id="StringCurtains" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <img src="assets/images/brick2.jpg"
+            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in"
+            data-aos-delay="100" />
+          <div class="max-w-xl" data-aos="fade-left" data-aos-delay="200">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">String Curtains: Playful Texture & Elegance</h2>
+            <p class="text-gray-600 text-base leading-relaxed">
+              Add a touch of whimsy and movement to any room with string curtains, 
+              available in multiple colors and densities. They offer creative zoning, gentle privacy, and a striking decorative effect.
+            </p>
+          </div>
+        </div>
+      </section>
+              <!-- GenuineLeather -->
+               <section id="GenuineLeather" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <img src="assets/images/genuine-leather.jpg"
+            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in" data-aos-delay="100" />
+          <div class=" max-w-xl" data-aos="fade-left" data-aos-delay="200">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Exquisite Genuine Leather & Hides</h2>
+          <p class="text-gray-600 text-base leading-relaxed">
+            Make a bold statement with our collection of genuine leather and luxurious hides.
+             Ideal for upholstery, wall panels, and accessories, these materials add timeless richness and sophistication.
+          </p>
+        </div>
+        </div>
+      </section>
+               <!-- WindowTreatmentBlinds -->
+                <section id="WindowTreatmentBlinds" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <img src="assets/images/window-curtains.jpg"
+            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in"
+            data-aos-delay="100" />
+          <div class="max-w-xl" data-aos="fade-left" data-aos-delay="200">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Smart & Elegant Window Blinds</h2>
+            <p class="text-gray-600 text-base leading-relaxed">
+              Control light and privacy with our contemporary blinds—choose from Roman, Venetian, vertical, or smart motorized options.
+               Designed to complement modern and traditional interiors alike
+            </p>
+          </div>
+        </div>
+      </section>
+                <!-- Trimmings -->
+                 <section id="Trimmings" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <img src="assets/images/product-hero.jpg"
+            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in" data-aos-delay="100" />
+          <div class=" max-w-xl" data-aos="fade-left" data-aos-delay="200">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Tailored Trimmings & Accessories</h2>
+          <p class="text-gray-600 text-base leading-relaxed">
+          Complete your décor with bespoke trimmings, tassels, borders, and decorative hardware. 
+          Our accessories let you add unique finishing touches to curtains, furniture, and cushions.  
+          </p>
+        </div>
+        </div>
+      </section>
+                 <!-- Lighting -->
+                  <section id="Lighting" data-aos="fade-up">
         <div class="flex flex-col md:flex-row items-center gap-10">
           <img src="assets/images/product-hero.jpg"
             class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in"
             data-aos-delay="100" />
-          <div class=" max-w-xl" data-aos="fade-left" data-aos-delay="200">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Wallpaper with Character & Elegance</h2>
+          <div class="max-w-xl" data-aos="fade-left" data-aos-delay="200">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Artisanal Lighting & Lamps</h2>
             <p class="text-gray-600 text-base leading-relaxed">
-              Wallpaper that elevates any room — choose from modern, vintage, or custom prints to reflect your unique
-              personality.
+              Illuminate your interiors with our curated lighting solutions. 
+              From statement chandeliers to minimalist table lamps, each piece blends ambiance with functional style.
+            </p>
+          </div>
+        </div>
+      </section>
+                  <!-- Furniture -->
+                   <section id="Furniture" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <img src="assets/images/furniture.jpg"
+            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in" data-aos-delay="100" />
+          <div class=" max-w-xl" data-aos="fade-left" data-aos-delay="200">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Signature Furniture Pieces</h2>
+          <p class="text-gray-600 text-base leading-relaxed">
+          Discover exclusive furniture that marries comfort and design—from custom sofas to accent chairs and storage. Each piece is crafted to infuse your space with personality and lasting quality.  
+          </p>
+        </div>
+        </div>
+      </section>
+                   <!-- Linens -->
+                    <section id="Linens" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <img src="assets/images/linen.jpg"
+            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in"
+            data-aos-delay="100" />
+          <div class="max-w-xl" data-aos="fade-left" data-aos-delay="200">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Luxury Linens & Soft Furnishings</h2>
+            <p class="text-gray-600 text-base leading-relaxed">
+              Indulge in the comfort of fine linens, bed spreads, throws, and cushions.
+               Choose from elegant textures and subtle patterns to add softness, warmth, and understated elegance to your interiors.
             </p>
           </div>
         </div>
@@ -363,15 +710,14 @@
       <section id="curtains" data-aos="fade-up">
         <div class="flex flex-col md:flex-row items-center gap-10">
           <img src="assets/images/brick1.jpg"
-            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in"
-            data-aos-delay="100" />
+            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in" data-aos-delay="100" />
           <div class=" max-w-xl">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Curtains Crafted for Style & Privacy</h2>
-            <p class="text-gray-600 text-base leading-relaxed">
-              Add a soft touch to your interiors with premium curtains tailored to perfection in colors and styles that
-              suit every mood.
-            </p>
-          </div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Curtains Crafted for Style & Privacy</h2>
+          <p class="text-gray-600 text-base leading-relaxed">
+            Add a soft touch to your interiors with premium curtains tailored to perfection in colors and styles that
+            suit every mood.
+          </p>
+        </div>
         </div>
       </section>
 
@@ -379,42 +725,58 @@
       <section id="blinds" data-aos="fade-up">
         <div class="flex flex-col md:flex-row items-center gap-10">
           <img src="assets/images/brick3.jpg"
-            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in"
-            data-aos-delay="100" />
+            class="w-full md:w-[450px] md:h-[450px] h-auto object-cover rounded-[8px] shadow-xl" data-aos="zoom-in" data-aos-delay="100" />
           <div class=" max-w-xl">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Functional & Stylish Window Blinds</h2>
-            <p class="text-gray-600 text-base leading-relaxed">
-              Modern blinds that offer light control, insulation, and privacy with a minimal and sleek aesthetic.
-            </p>
-          </div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Functional & Stylish Window Blinds</h2>
+          <p class="text-gray-600 text-base leading-relaxed">
+            Modern blinds that offer light control, insulation, and privacy with a minimal and sleek aesthetic.
+          </p>
+        </div>
         </div>
       </section>
     </main>
   </section>
-  <footer class="bg-[#22252B] text-[#D9D9D9] py-12 px-6 md:px-20">
+  <footer class="bg-[#22252B] text-[#D9D9D9] py-12 px-4 md:px-20">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
       <!-- Section 1: Brand Info -->
       <div>
-        <h2 class="text-2xl font-bold mb-4">LE GLOBAL DESIGN</h2>
+        <div class="mb-6">
+          <img src="assets/images/logo-dark.png" alt="Logo" class="h-[40px] mb-6">
+        </div>
         <p class="text-gray-400 mb-6">
           We bring your dream to life with unique designs and quality work that speaks louder than words.
         </p>
         <div class="flex gap-4 items-center">
-          <a href="#" aria-label="Instagram">
-            <!-- <img src="assets/icons/brand-instagram.svg" alt="Instagram" stroke-width="0.5" class="w-8 h-8 invert" /> -->
-             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg>
+          <a href="https://instagram.com/leglobaldesign?igshid=YmMyMTA2M2Y=" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
+              <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+              <path d="M16.5 7.5v.01" />
+            </svg>
           </a>
-          <a href="https://www.whatsapp.com" aria-label="WhatsApp">
-            <!-- <img src="assets/icons/brand-whatsapp.svg" alt="WhatsApp" stroke-width="0.5" class="w-8 h-8 invert" /> -->
-             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg>
+          <a href="https://wa.me/message/ACACC5ZCUZJVB1" aria-label="WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+              <path
+                d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+            </svg>
           </a>
-          <a href="tel:+123456789" aria-label="Call">
-            <!-- <img src="assets/icons/phone.svg" alt="Phone" stroke-width="0.5" class="w-8 h-8 invert" /> -->
-             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-phone"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" /></svg>
+          <a href="contact.html" aria-label="Call">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-phone">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+            </svg>
           </a>
-      </div>
-
-
+        </div>
       </div>
 
       <!-- Section 2: Links -->
@@ -448,10 +810,8 @@
           <li>Support: <a href="#" class="hover:text-white transition">support.leglobal.com</a></li>
         </ul>
       </div>
-
     </div>
 
-    <!-- Optional bottom line -->
     <div class="mt-10 text-center text-sm text-gray-500">
       &copy; 2025 Le Global Design. All rights reserved.
     </div>
